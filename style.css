@@ -1,3 +1,5 @@
+:root {
+}
 html {
   box-sizing: border-box;
 }
@@ -12,6 +14,7 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #3c3c3c;
   background-color: #040404;
+  background-color: #000;
 }
 header {
   display: flex;
@@ -20,14 +23,18 @@ header {
   align-items: center;
   gap: 1rem;
   width: 100%;
+  margin-top: -2rem;
 }
 img {
   border-radius: 0.3rem;
 }
+/*
+*/
 header img {
   width: 15rem;
-  height: 10rem;
+  height: 15rem;
   border-radius: 0.3rem;
+  z-index: -1;
 }
 
 .navegacion {
@@ -36,7 +43,7 @@ header img {
   grid-template-rows: 1fr;
   border-radius: 0.3rem;
   width: 100%;
-  margin-top: -1rem;
+  margin-top: -4rem;
 }
 .precios,
 .compras,
@@ -60,21 +67,19 @@ header img {
   width: 100%;
   height: 100%;
   clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+  z-index: 2;
 }
-.precios-enlace a {
-  color: orange;
-}
-
 .compras-enlace {
   color: #040404;
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 10px;
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: orange;
+  background-color: #ed7727;
   clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+  z-index: 1;
 }
 .compras-enlace a,
 .opiniones-enlace a {
@@ -87,33 +92,38 @@ header img {
   align-items: center;
   gap: 4px;
   justify-content: center;
-  background-color: red;
+  background-color: #ea1c28;
   width: 100%;
   height: 100%;
+  z-index: 2;
+}
+.opiniones-enlace img {
+  margin-left: -4rem;
+  z-index: 1;
 }
 .fondo {
   position: absolute;
-  background-color: orange;
+  background-color: #ed7727;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 .fondo-compra {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: #ea1c28;
   z-index: -1;
 }
-.opiniones {
-  position: relative;
+.opiniones-enlace img {
+  text-align: center;
 }
 .fondo-op {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: white;
-  z-index: -1;
+  z-index: 1;
   top: 0;
 }
 .precios-enlace a {
@@ -147,9 +157,10 @@ header img {
   background-color: white;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 5px;
+  align-items: center;
+}
+.proveedor-enlace img {
 }
 .proveedor-fondo {
   position: relative;
@@ -166,38 +177,291 @@ header img {
   color: #040404;
 }
 
-@media (max-width: 700px) {
-  header img {
-    width: 5rem;
-    height: 6rem;
-  }
+.proveedor-enlace img {
+  z-index: 1;
+}
 
+/*
+carusel 
+*/
+
+/*
+carusel imagenes 
+*/
+.carrusel {
+  margin-top: 2rem;
+  width: 100%;
+  height: 69vh;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+.carrusel-videos,
+.carrusel-imagenes {
+  width: 30%;
+  height: 70%;
+  position: relative;
+}
+.carrusel-imagenes img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+.carrusel-videos video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  opacity: 0;
+  visibility: hidden;
+}
+.carrusel-imagenes img {
+  position: absolute;
+  opacity: 0;
+}
+.botones {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(ssstik.io_1699301402068.mp4);
+}
+.botones p {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: thin solid white;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+.botones p:hover {
+  background-color: white;
+}
+.video-activo {
+  background-color: white;
+}
+.tiktos {
+  position: relative;
+  height: 70%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.chimuzero {
+  background-color: white;
+  width: 100%;
+  height: 90%;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #161722;
+  text-align: center;
+  position: absolute;
+  opacity: 0;
+}
+.chimuzero-fondo {
+  position: absolute;
+  border-radius: 0.3rem 0.3rem 0 0;
+  background-color: #0f919d;
+
+  width: 100%;
+  height: 30%;
+}
+.chimuzero-info {
+  margin-top: -1.5rem;
+}
+.chimuzero img {
+  margin-top: 1rem;
+  z-index: 9;
+  border-radius: 50%;
+  height: 8rem;
+  object-fit: contain;
+  object-position: top;
+  border: thick solid white;
+}
+
+/*
+*/
+/* Estilos para la lista de tareas con el nombre de clase modificado */
+.btns {
+  display: flex;
+  width: 5rem;
+  position: absolute;
+  bottom: 0;
+  left: 39%;
+}
+.btns input[type="radio"] {
+  width: 1em;
+  height: 1em;
+  appearance: none;
+  -webkit-appearance: none;
+  margin-right: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btns input[type="radio"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+@keyframes ver-video {
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.ver-video {
+  animation: ver-video 1s ease both;
+}
+@keyframes ver {
+  0% {
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.activa {
+  animation: ver 0.5s ease 0.1s both;
+}
+
+/*responsive phone*/
+@media (max-width: 430px) {
+  header {
+    margin-top: -1rem;
+  }
+  header img {
+    width: 10rem;
+    height: 10rem;
+    z-index: -1;
+  }
+  .navegacion {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+  }
+  .opiniones-enlace,
+  .compras-enlace {
+    clip-path: none;
+    border-radius: 0.3rem;
+  }
+  .precios-enlace {
+    clip-path: none;
+    border: none;
+  }
+  .fondo,
+  .fondo-compra,
+  .fondo-op {
+    display: none;
+  }
+  .proveedor,
+  .precios {
+    border-radius: 0.3rem;
+    width: 100%;
+    border: thick solid #ced0cf;
+    border-top: none;
+  }
+  .proveedor {
+  }
+  .proveedor-enlace {
+    display: flex;
+  }
+  .proveedor-enlace a {
+    margin-left: 0.2rem;
+  }
   .precios,
   .compras,
   .opiniones,
   .proveedor {
-    font-size: 9px;
+    font-size: 12px;
+    height: 2.5rem;
+  }
+  .precios img {
+    display: flex;
+    margin-left: 1rem;
   }
   .precios:hover,
   .compras:hover,
   .opiniones:hover,
   .proveedor:hover {
-    font-size: 9px;
+    font-size: 14px;
   }
 
   .precios img,
   .compras-enlace img,
   .opiniones img,
   .proveedor-enlace img {
-    width: 11px;
-    height: 11px;
+    width: 15px;
+    height: 15px;
   }
 
-  .precios,
-  .compras,
-  .opiniones,
-  .proveedor {
-    height: 4rem;
-    text-align: left;
+  .opiniones-enlace img {
+    width: 1rem;
+    height: 1rem;
+  }
+  .proveedor-fondo {
+    display: none;
+  }
+  .proveedor-enlace {
+    width: 100%;
+  }
+  .opiniones-enlace img {
+    margin-left: -1rem;
+  }
+  .proveedor-enlace img {
+    z-index: 1;
+    margin-left: 1.3rem;
+  }
+  .proveedor-enlace {
+    gap: 0;
+  }
+  .precios-enlace a {
+    width: 70%;
+  }
+  .precios-enlace {
+    gap: 0;
+  }
+  .compras-enlace a {
+    margin-left: -0.2rem;
+    gap: 0;
+  }
+  .carrusel {
+    flex-direction: column;
+    align-items: center;
+    gap: 12rem;
+  }
+  .carrusel-videos,
+  .carrusel-imagenes {
+    width: 80%;
+    height: 50%;
+    border-radius: 0.3rem;
+  }
+  .carrusel-imagenes img {
+    height: 18rem;
+  }
+  .carrusel-videos video {
+  }
+  .tiktos {
+    width: 90%;
+    height: 100%;
+  }
+  .chimuzero {
+    width: 90%;
+    height: 80%;
   }
 }
