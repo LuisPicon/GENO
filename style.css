@@ -38,12 +38,13 @@ header img {
 }
 
 .navegacion {
+  position: fixed;
+  bottom: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   border-radius: 0.3rem;
   width: 100%;
-  margin-top: -4rem;
 }
 .precios,
 .compras,
@@ -190,7 +191,6 @@ carusel imagenes
 */
 .carrusel {
   position: relative;
-  margin-top: 2rem;
   width: 100%;
   height: 50vh;
   display: flex;
@@ -331,6 +331,9 @@ carusel imagenes
 .activa {
   animation: ver 0.5s ease 0.1s both;
 }
+.menu-celulares {
+  display: none;
+}
 
 /*responsive phone*/
 @media (max-width: 430px) {
@@ -343,96 +346,69 @@ carusel imagenes
     z-index: -1;
   }
   .navegacion {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 0.5rem;
-    column-gap: 0.5rem;
-  }
-  .opiniones-enlace,
-  .compras-enlace {
-    clip-path: none;
-    border-radius: 0.3rem;
-  }
-  .precios-enlace {
-    clip-path: none;
-    border: none;
-  }
-  .fondo,
-  .fondo-compra,
-  .fondo-op {
     display: none;
   }
-  .proveedor,
-  .precios {
-    border-radius: 0.3rem;
+  .menu-celulares {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: thin solid black;
+    position: fixed;
+    background-color: #fff;
+    bottom: 0;
     width: 100%;
-    border: thick solid #ced0cf;
-    border-top: none;
+    z-index: 100;
+    height: 5rem;
   }
-  .proveedor {
-  }
-  .proveedor-enlace {
+  .menu-celulares div {
+    border: thin solid black;
+    height: 5rem;
+    margin: 0;
     display: flex;
-  }
-  .proveedor-enlace a {
-    margin-left: 0.2rem;
-  }
-  .precios,
-  .compras,
-  .opiniones,
-  .proveedor {
-    font-size: 12px;
-    height: 2.5rem;
-  }
-  .precios img {
-    display: flex;
-    margin-left: 1rem;
-  }
-  .precios:hover,
-  .compras:hover,
-  .opiniones:hover,
-  .proveedor:hover {
-    font-size: 14px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
-  .precios img,
-  .compras-enlace img,
-  .opiniones img,
-  .proveedor-enlace img {
-    width: 15px;
-    height: 15px;
+  .celular-preguntas {
+    font-size: 1rem;
+
+    width: calc(100% / 3);
+  }
+  .celular-compras img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .celular-compras {
+    font-size: 0.8rem;
+
+    width: calc(100% / 3);
   }
 
-  .opiniones-enlace img {
-    width: 1rem;
-    height: 1rem;
+  .celular-puntos-de-venta img {
+    margin-top: 0.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
   }
-  .proveedor-fondo {
-    display: none;
+  .celular-puntos-de-venta {
+    font-size: 0.8rem;
+
+    width: calc(100% / 3);
   }
-  .proveedor-enlace {
-    width: 100%;
+  .celular-mas {
+    font-size: 0.8rem;
+    width: calc(20%);
   }
-  .opiniones-enlace img {
-    margin-left: -1rem;
+  .celular-mas img {
+    margin-top: 0.5rem;
+    height: 2rem;
+    width: 2rem;
   }
-  .proveedor-enlace img {
-    z-index: 1;
-    margin-left: 1.3rem;
+  .celular-mas p {
+    margin-top: 0.1rem;
   }
-  .proveedor-enlace {
-    gap: 0;
-  }
-  .precios-enlace a {
-    width: 70%;
-  }
-  .precios-enlace {
-    gap: 0;
-  }
-  .compras-enlace a {
-    margin-left: -0.2rem;
-    gap: 0;
-  }
+
   .carrusel {
     flex-direction: column;
     height: auto;
