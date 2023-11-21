@@ -189,17 +189,19 @@ carusel
 carusel imagenes 
 */
 .carrusel {
+  position: relative;
   margin-top: 2rem;
   width: 100%;
-  height: 69vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5rem;
 }
 .carrusel-videos,
 .carrusel-imagenes {
-  width: 30%;
-  height: 70%;
+  width: 20rem;
+  height: 20rem;
   position: relative;
 }
 .carrusel-imagenes img {
@@ -207,94 +209,79 @@ carusel imagenes
   height: 100%;
   border-radius: 1rem;
 }
-.carrusel-videos video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  opacity: 0;
-  visibility: hidden;
-}
+
 .carrusel-imagenes img {
   position: absolute;
   opacity: 0;
 }
-.botones {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-image: url(ssstik.io_1699301402068.mp4);
-}
-.botones p {
-  cursor: pointer;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: thin solid white;
-  transition: all 0.5s ease;
-  z-index: 1;
-}
-.botones p:hover {
-  background-color: white;
-}
+
 .video-activo {
   background-color: white;
 }
-.tiktos {
-  position: relative;
-  height: 70%;
-  width: 25%;
+.carrusel-videos {
+  border-radius: 0.8rem;
+  background-color: white;
   display: flex;
+  z-index: -2;
+  gap: 2rem;
+}
+.carrusel-videos img,
+.carrusel-videos video {
+  border: thick solid white;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+}
+.carrusel-videos video {
+  background-image: url(302495259_509857827810397_6324300132683450414_n.jpg);
+  background-position: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.carrusel-videos::after {
+  content: "";
+  width: 100%;
+  height: 6rem;
+  background-color: #2968c8;
+  position: absolute;
+  z-index: -1;
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+.contenido {
+  margin-top: -1rem;
+}
+.chimuzero-persona {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
+  z-index: 2;
 }
 .chimuzero {
-  background-color: white;
-  width: 100%;
-  height: 90%;
-  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: #161722;
   text-align: center;
+  margin-top: 1.5rem;
   position: absolute;
-  opacity: 0;
-}
-.chimuzero-fondo {
-  position: absolute;
-  border-radius: 0.3rem 0.3rem 0 0;
-  background-color: #0f919d;
-
-  width: 100%;
-  height: 30%;
-}
-.chimuzero-info {
-  margin-top: -1.5rem;
-}
-.chimuzero img {
-  margin-top: 1rem;
-  z-index: 9;
-  border-radius: 50%;
-  height: 8rem;
-  object-fit: contain;
-  object-position: top;
-  border: thick solid white;
 }
 
-/*
-*/
+.chimuzero button {
+  width: 40%;
+  margin: auto;
+  background-color: #2968c8;
+  border: none;
+  border-radius: 0.3rem;
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
 /* Estilos para la lista de tareas con el nombre de clase modificado */
 .btns {
+  position: absolute;
   display: flex;
   width: 5rem;
-  position: absolute;
-  bottom: 0;
-  left: 39%;
+  bottom: -2rem;
 }
 .btns input[type="radio"] {
   width: 1em;
@@ -309,6 +296,9 @@ carusel imagenes
   align-items: center;
   justify-content: center;
 }
+.btns input:checked {
+  background-color: white;
+}
 
 .btns input[type="radio"]::before {
   content: "";
@@ -318,6 +308,9 @@ carusel imagenes
   border: 2px solid #fff;
   border-radius: 50%;
   transition: background-color 0.3s;
+}
+.contenido {
+  margin-top: 0.5rem;
 }
 @keyframes ver-video {
   100% {
@@ -442,26 +435,11 @@ carusel imagenes
   }
   .carrusel {
     flex-direction: column;
-    align-items: center;
-    gap: 12rem;
+    height: auto;
+    gap: 0.5rem;
   }
-  .carrusel-videos,
-  .carrusel-imagenes {
-    width: 80%;
-    height: 50%;
-    border-radius: 0.3rem;
-  }
-  .carrusel-imagenes img {
-    height: 18rem;
-  }
-  .carrusel-videos video {
-  }
-  .tiktos {
-    width: 90%;
-    height: 100%;
-  }
-  .chimuzero {
-    width: 90%;
-    height: 80%;
-  }
+}
+
+.activa {
+  z-index: 100;
 }

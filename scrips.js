@@ -1,53 +1,71 @@
 const $carrusel = document.querySelectorAll(".carrusel-imagenes img");
 const $cardVideos = document.querySelectorAll(".chimuzero");
+const $cheked = document.querySelectorAll(".btns input");
 let i = 0;
 let j = 0;
-function siguente(elementos) {
-  if (i === 2) {
-    elementos[i].classList.remove("activa");
-    i = 0;
-    elementos[i].classList.add("activa");
-  } else {
-    elementos[i].classList.remove("activa");
-    elementos[i + 1].classList.add("activa");
-    i++;
-  }
+let m = 0;
+
+function intervalo2(elementos) {
+  setInterval(() => {
+    if (i === 2) {
+      elementos[i].classList.remove("activa");
+      $cheked[m].checked = false;
+
+      i = 0;
+      m = 0;
+      elementos[i].classList.add("activa");
+      $cheked[m].checked = true;
+    } else {
+      elementos[i].classList.remove("activa");
+      elementos[i + 1].classList.add("activa");
+      i++;
+      $cheked[m].checked = false;
+      $cheked[m + 1].checked = true;
+      m++;
+    }
+  }, 10000);
 }
-setInterval(() => {
-  if (j === 2) {
+
+function intervalo1() {
+  setInterval(() => {
+    if (j === 2) {
+      $cardVideos[j].classList.remove("activa");
+      j = 0;
+      $cardVideos[j].classList.add("activa");
+    } else {
+      $cardVideos[j].classList.remove("activa");
+      $cardVideos[j + 1].classList.add("activa");
+      j++;
+    }
+  }, 10000);
+}
+function arrancar() {
+  intervalo1();
+  intervalo2($carrusel);
+}
+arrancar();
+function deter() {
+  clearInterval(intervalo1);
+  clearInterval(intervalo2);
+}
+
+document.addEventListener("click", (e) => {
+  const evento = e.target;
+
+  if (evento.classList.contains("radio") && evento.value != m) {
+    $carrusel[evento.value].classList.add("activa");
+    $carrusel[i].classList.remove("activa");
+
+    $cardVideos[evento.value].classList.add("activa");
     $cardVideos[j].classList.remove("activa");
-    j = 0;
-    $cardVideos[j].classList.add("activa");
-  } else {
-    $cardVideos[j].classList.remove("activa");
-    $cardVideos[j + 1].classList.add("activa");
-    j++;
+
+    $cheked[evento.value].checked = true;
+    $cheked[m].checked = false;
+
+    i = parseInt(evento.value);
+    j = parseInt(evento.value);
+    m = parseInt(evento.value);
+    clearInterval(deter());
+    arrancar();
   }
-}, 6000);
-
-setInterval(() => {
-  siguente($carrusel);
-}, 6000);
-//carrusel videos
-/*
-setInterval(() => {
-  if (j === 2) {
-    $carruselVideos[j].classList.remove("ver-video");
-    //pocicion
-    $p[j].classList.remove("video-activo");
-
-    j = 0;
-    $carruselVideos[j].classList.add("ver-video");
-    //pocicion
-    $p[j].classList.add("video-activo");
-  } else {
-    $carruselVideos[j].classList.remove("ver-video");
-    $carruselVideos[j + 1].classList.add("ver-video");
-    //pocicion
-    $p[j].classList.remove("video-activo");
-    $p[j + 1].classList.add("video-activo");
-
-    j++;
-  }
-}, 5000);
-*/
+});
