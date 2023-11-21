@@ -393,12 +393,12 @@ carusel imagenes
   }
 
   .celular-puntos-de-venta img {
-    margin-top: 1rem;
+    margin-top: 1.3rem;
     height: 1.5rem;
     width: 1.5rem;
   }
   .celular-puntos-de-venta p {
-    margin-top: -0.1rem;
+    margin-top: 3px;
   }
   .celular-puntos-de-venta {
     font-size: 0.8rem;
@@ -410,12 +410,12 @@ carusel imagenes
     width: calc(20%);
   }
   .celular-mas img {
-    margin-top: 1rem;
+    margin-top: 8px;
     height: 1.5rem;
     width: 1.5rem;
   }
   .celular-mas p {
-    margin-top: 0.1rem;
+    margin-top: 5px;
   }
 
   .carrusel {
