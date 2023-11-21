@@ -69,3 +69,15 @@ document.addEventListener("click", (e) => {
     arrancar();
   }
 });
+// Deshabilitar el zoom táctil
+function deshabilitarZoomTactil() {
+  var viewport = document.querySelector('meta[name="viewport"]');
+
+  if (viewport) {
+    viewport.content =
+      "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0";
+  }
+}
+
+// Llamar a la función cuando se carga la página
+window.onload = deshabilitarZoomTactil;
