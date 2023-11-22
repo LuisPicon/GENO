@@ -4,6 +4,7 @@ const $cheked = document.querySelectorAll(".btns input");
 let i = 0;
 let j = 0;
 let m = 0;
+const $menuMAs = document.querySelector(".menu-mas");
 
 function intervalo2(elementos) {
   setInterval(() => {
@@ -51,7 +52,11 @@ function deter() {
 
 document.addEventListener("click", (e) => {
   const evento = e.target;
-
+  console.log(evento);
+  if (evento.classList.contains("abrir")) {
+    console.log($menuMAs);
+    $menuMAs.classList.toggle("mas-activo");
+  }
   if (evento.classList.contains("radio") && evento.value != m) {
     $carrusel[evento.value].classList.add("activa");
     $carrusel[i].classList.remove("activa");

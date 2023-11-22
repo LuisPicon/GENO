@@ -1,5 +1,5 @@
-:root {
-}
+/*te pido perdon por  lo que vas, a ver  pero no es timpo de lamentos*/
+
 html {
   box-sizing: border-box;
 }
@@ -334,7 +334,9 @@ carusel imagenes
 .menu-celulares {
   display: none;
 }
-
+.menu-mas {
+  display: none;
+}
 /*responsive phone*/
 @media (max-width: 430px) {
   header {
@@ -376,6 +378,7 @@ carusel imagenes
   }
 
   .carrusel {
+    z-index: -1;
     flex-direction: column;
     height: auto;
     gap: 1rem;
@@ -395,8 +398,77 @@ carusel imagenes
     width: 100%;
     height: 10rem;
   }
+
+  .menu-mas {
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+    width: 60%;
+    bottom: 48px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 0.5rem 0 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  .informacion {
+    background-color: #2968c8;
+
+    color: white;
+    border-radius: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .informacion img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .informacion p {
+    font-size: 14px;
+  }
+  .informacion button {
+    border-radius: 0.2rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    width: 8rem;
+    padding: 0.5rem;
+    font-size: 16px;
+  }
+
+  .menu-mas-envios img,
+  .menu-mas-opinion img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .menu-mas-envios,
+  .menu-mas-mayorista,
+  .menu-mas-opinion,
+  .menu-mas-redes {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 3.5rem;
+    border-bottom: thin solid black;
+  }
+  .menu-mas-opinion {
+  }
+  .menu-mas-redes img {
+    height: 2rem;
+    width: 2rem;
+    border-bottom: none;
+  }
 }
 
 .activa {
   z-index: 100;
+}
+.mas-activo {
+  transform: translateX(0);
 }
