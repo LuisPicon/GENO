@@ -323,11 +323,8 @@ carusel imagenes
 }
 @keyframes ver {
   0% {
-    transform: scale(0.9);
   }
   100% {
-    transform: scale(1);
-
     opacity: 1;
   }
 }
@@ -344,93 +341,50 @@ carusel imagenes
     margin-top: -1rem;
   }
   header img {
-    width: 10rem;
-    height: 10rem;
+    width: 14rem;
+    height: 14rem;
     z-index: -1;
   }
   .navegacion {
     display: none;
   }
   .menu-celulares {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: thin solid black;
     position: fixed;
-    background-color: #fff;
-    bottom: 0;
     width: 100%;
-    z-index: 100;
-    height: 5rem;
-  }
-  .menu-celulares p {
-    color: #5c5a5a;
+    height: 3rem;
+    bottom: 0;
+    display: flex;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .menu-celulares div {
-    height: 5rem;
-    margin: 0;
+    width: calc(100% / 4);
+    height: 100%;
     display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
     flex-direction: column;
-  }
-
-  .celular-preguntas {
-    font-size: 0.8rem;
-
-    width: calc(100% / 3);
-  }
-  .celular-preguntas img {
-    margin-top: 22px;
-    margin-bottom: -8px;
-  }
-  .celular-preguntas p {
-  }
-  .celular-compras img {
-    margin-top: 0.5rem;
-    height: 1.5rem;
-    width: 1.5rem;
-  }
-  .celular-compras p {
-    margin-top: 0.2rem;
-  }
-  .celular-compras {
-    font-size: 0.8rem;
-
-    width: calc(100% / 3);
-  }
-
-  .celular-puntos-de-venta img {
-    margin-top: 1.3rem;
-    height: 1.5rem;
-    width: 1.5rem;
-  }
-  .celular-puntos-de-venta p {
+    align-items: center;
     margin-top: 5px;
   }
-  .celular-puntos-de-venta {
-    font-size: 0.8rem;
-
-    width: calc(100% / 3);
+  .menu-celulares img {
+    width: 20px;
+    height: 20px;
   }
-  .celular-mas {
-    font-size: 0.8rem;
-    width: calc(20%);
-  }
-  .celular-mas img {
-    margin-top: 8px;
-    height: 1.5rem;
-    width: 1.5rem;
-  }
-  .celular-mas p {
-    margin-top: 5px;
+  .menu-celulares p {
+    font-size: 10px;
   }
 
   .carrusel {
     flex-direction: column;
     height: auto;
-    gap: 0.5rem;
+    gap: 1rem;
+    width: 80%;
+    margin: auto;
+    margin-top: -2rem;
+  }
+  .carrusel .carrusel-imagenes .carrusel-videos {
+    width: 100%;
   }
 }
 
