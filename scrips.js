@@ -53,7 +53,8 @@ function deter() {
 document.addEventListener("click", (e) => {
   const evento = e.target;
   console.log(evento);
-  if (evento.classList.contains("abrir")) {
+  console.log(evento);
+  if (evento.classList.contains("mas")) {
     $menuMAs.classList.toggle("mas-activo");
   }
   if (evento.classList.contains("blanco2")) {
@@ -72,8 +73,6 @@ document.addEventListener("click", (e) => {
     i = parseInt(evento.value);
     j = parseInt(evento.value);
     m = parseInt(evento.value);
-    clearInterval(deter());
-    arrancar();
   }
 });
 // Deshabilitar el zoom táctil

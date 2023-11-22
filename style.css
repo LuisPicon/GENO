@@ -393,14 +393,33 @@ carusel imagenes
   height: 3.5rem;
   border-bottom: thin solid black;
 }
-.menu-mas-opinion {
-}
+
 .menu-mas-redes img {
   height: 2rem;
   width: 2rem;
   border-bottom: none;
 }
-
+.informacion img {
+  border-radius: 50%;
+  border: thick solid white;
+  margin-top: 10px;
+}
+.menu-mas-envios,
+.menu-mas-mayorista,
+.menu-mas-opinion {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.menu-mas-opinion p,
+.menu-mas-envios p,
+.menu-mas-mayorista p {
+  margin-top: -5px;
+}
+.menu-mas-opinion img {
+  height: 5rem;
+  width: 5rem;
+}
 /*responsive phone*/
 @media (max-width: 430px) {
   header {
@@ -424,6 +443,7 @@ carusel imagenes
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
   }
   .menu-celulares div {
     width: calc(100% / 4);
@@ -448,6 +468,10 @@ carusel imagenes
     width: 100%;
     margin: auto;
     margin-top: -2rem;
+    z-index: 6;
+  }
+  .btns {
+    z-index: 9;
   }
   .carrusel-imagenes {
     width: 18rem;
@@ -474,6 +498,7 @@ carusel imagenes
     border-radius: 0.5rem 0 0;
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    z-index: 11;
   }
   .informacion {
     background-color: #2968c8;
@@ -485,8 +510,14 @@ carusel imagenes
     align-items: center;
   }
   .informacion img {
-    width: 2rem;
-    height: 2rem;
+    border-radius: 50%;
+    border: thick solid white;
+    margin-top: 10px;
+
+    width: 3rem;
+    height: 3rem;
+  }
+  .informacion span {
   }
   .informacion p {
     font-size: 14px;
@@ -500,15 +531,16 @@ carusel imagenes
     padding: 0.5rem;
     font-size: 16px;
   }
+  .btns {
+    z-index: 100;
+  }
 
-  .menu-mas-envios img,
-  .menu-mas-opinion img {
+  .menu-mas-envios img {
     height: 1.5rem;
     width: 1.5rem;
+    z-index: -1;
   }
-  .menu-mas-envios,
-  .menu-mas-mayorista,
-  .menu-mas-opinion,
+
   .menu-mas-redes {
     font-size: 13px;
     display: flex;
