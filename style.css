@@ -428,6 +428,7 @@ carusel imagenes
   font-size: 14px;
   margin-top: -1px;
 }
+
 /*responsive phone*/
 @media (max-width: 430px) {
   header {
@@ -459,7 +460,7 @@ carusel imagenes
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 10px;
   }
   .menu-celulares img {
     width: 20px;
@@ -467,6 +468,7 @@ carusel imagenes
   }
   .menu-celulares p {
     font-size: 10px;
+    margin-top: 1px;
   }
 
   .carrusel {
