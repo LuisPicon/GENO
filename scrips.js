@@ -54,7 +54,9 @@ document.addEventListener("click", (e) => {
   const evento = e.target;
   console.log(evento);
   if (evento.classList.contains("abrir")) {
-    console.log($menuMAs);
+    $menuMAs.classList.toggle("mas-activo");
+  }
+  if (evento.classList.contains("blanco2")) {
     $menuMAs.classList.toggle("mas-activo");
   }
   if (evento.classList.contains("radio") && evento.value != m) {
