@@ -350,14 +350,14 @@ carusel imagenes
   transition: transform 0.3s ease;
 }
 .informacion {
-  background-color: #2968c8;
-
   color: white;
   border-radius: 0.5rem 0 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-left: thin solid black;
+  background-color: #2968c8;
 }
 .informacion img {
   width: 2rem;
@@ -391,6 +391,7 @@ carusel imagenes
   justify-content: center;
   gap: 5px;
   height: 3.5rem;
+  border-left: thin solid black;
   border-bottom: thin solid black;
 }
 
@@ -508,6 +509,7 @@ carusel imagenes
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border-left: thin solid black;
   }
   .informacion img {
     border-radius: 50%;
