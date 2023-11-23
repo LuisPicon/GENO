@@ -356,8 +356,8 @@ carusel imagenes
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-left: thin solid black;
-  background-color: #2968c8;
+  border-left: thin solid gray;
+  background-color: #ed7727;
 }
 .informacion img {
   width: 2rem;
@@ -391,8 +391,8 @@ carusel imagenes
   justify-content: center;
   gap: 5px;
   height: 3.5rem;
-  border-left: thin solid black;
-  border-bottom: thin solid black;
+  border-left: thin solid gray;
+  border-bottom: thin solid gray;
 }
 
 .menu-mas-redes img {
@@ -404,16 +404,26 @@ carusel imagenes
   border-radius: 50%;
   margin-top: 10px;
 }
-.menu-mas-envios,
-.menu-mas-mayorista,
 .menu-mas-opinion {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-.menu-mas-opinion p,
-.menu-mas-envios p,
+.menu-mas-mayorista {
+  display: flex;
+  align-items: center;
+}
+.menu-mas-mayorista img {
+  margin-left: -1rem;
+  margin-right: 1rem;
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
 .menu-mas-mayorista p {
+  margin-left: -17px;
+}
+.menu-mas-opinion p {
   margin-top: -5px;
 }
 .menu-mas-opinion img {
@@ -511,8 +521,6 @@ carusel imagenes
     z-index: 11;
   }
   .informacion {
-    background-color: #2968c8;
-    color: white;
     border-radius: 0.5rem 0 0;
     display: flex;
     flex-direction: column;
