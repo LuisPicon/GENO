@@ -5,7 +5,7 @@ let i = 0;
 let j = 0;
 let m = 0;
 const $menuMAs = document.querySelector(".menu-mas");
-
+const $menuCel = document.querySelector(".menu-celulares");
 function intervalo2(elementos) {
   setInterval(() => {
     if (i === 2) {
@@ -52,10 +52,11 @@ function deter() {
 
 document.addEventListener("click", (e) => {
   const evento = e.target;
-  console.log(evento);
-  console.log(evento);
   if (evento.classList.contains("mas")) {
     $menuMAs.classList.toggle("mas-activo");
+  }
+  if (!$menuMAs.contains(e.target) && !$menuCel.contains(e.target)) {
+    $menuMAs.classList.remove("mas-activo");
   }
   if (evento.classList.contains("blanco2")) {
     $menuMAs.classList.toggle("mas-activo");
